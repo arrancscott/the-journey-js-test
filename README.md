@@ -1,0 +1,1 @@
+Sinatra app - generates a random string with some fucking sdf
