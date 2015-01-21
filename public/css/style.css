@@ -1449,6 +1449,10 @@
 		margin-top: 0;
 	}
 
+	.text-right {
+		text-align: right;
+	}
+
 	/* Header */
 
 	#skel-layers-wrapper {
