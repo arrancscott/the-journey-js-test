@@ -30,7 +30,7 @@
 
 	<header class="major" id="major-man">
 		<h2>Sdf Generator</h2>
-		<p>Tired of seeing lorem ipsum? Make way for sdfasdf...</p>
+		<p>Tired of using lorem ipsum? Make way for sdfasdf...</p>
 	</header>
 
 	<!-- Main -->
@@ -40,14 +40,31 @@
 			<!-- Content -->
 			<section id="content">
 				<!-- <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a> -->
-				<h3>Pronounced 'sfd'</h3>
-				<p>f asssdsafdddada asas aa aaaaadfdasss afsdfssssdsasfsddsfaasddffd aassfadfsss assfassfdssdff aaass ad aaadss afdadssffddads ada aasssfsasas as as asdassdaadsfffss aadsdsdassfdfadsfadsfff aaaaasfsassf afsdffs aafddsf assfs aaaaaff aaaaadssssddfsfaassfssssdaa afs asadsassaass as af aasa affssdsssfa aaaassf adsdsd asf aadasf afdsaas add.</p>
 
-				<h3>It literally means no fucking sense</h3>
-				<p>s adfdaadasassaas aaf assdddadfaass aas assaa afdfsss aafsdssfassfdfdf as aa assfs aaaadasaadds aasdd addsadfs asfs asafsaa aa affd adas asd assdsss asfs assf afddsfa affsfasdadsfsdsff ad aaa asfd assaa adaf aasdsfdsasfdfsfs aaddsfsfs adsdsdafsadsdssdsa aaf aasadsa adsfsfasssdff asafsfsaaaff asssdsdd asdaf asssssf assf asfsfadssassasa aassf.</p>
+				<div class="row">
+					<div class="6u 12u$(medium)">
+						<h3>Pronounced 'sfd'</h3>
+						<p>Fs aasaass asfsa afs adsa asss aaf adssfssdd aassfssfaf ad aa adsad adaas aafsfdfafsadssssasss aasadafd asf asddsd afasfssasfsssda aafdsfafssasdfdffs aaddds asffaf assdsffs af aaddafass adssasd afss ass aaas aaddaa aaafssfad adfddssasss aasssa afdssadsdfasdad asdasdfa assf afaasdsfssdas aadf aasdf adadds ass as affsdaaffssa aaafsfssfssfssdd.</p>
+					</div>
 
-				<h3>Quicker than button bashing</h3>
-				<p>da affa aasfs asfdfasafass aa asssa asfssdd aaaass aadsasdssdafff aassssaf adassdd adsffsaafasdssass ass affdfassssdfa aasfs asdssaf aasfad adsfsdsdaassfssdsfs addfas adsdsf af aafd add aa af adas aaadfsff aaaf asssdsf afasdsdddssfsdasssaf assadss aasd asdfsf asafsafd adaassdssaa aasf addasdfsfsa affss asdsaassfsds aaadsfdsass aassfaf ad ad.</p>
+					<div class="6u 12u$(medium)">
+						<h3>It literally means no sense</h3>
+						<p>D affddasdssdssfassadd afs aadsff af afdsdddssaf ads adda aaadsfass assadaaaf afa assfs as asfasassfdddffdsass afssadaaffaaadsddafssff assfssd ad aafffddsss adsf assss aasaafsad as aafdd asdfdssfasf aassdsadssad as afssffs asa afdaaaafassss aaad ad aasdsdsf adsssafdss aa asasasasdd aaffs assssf aaadsss asas adaasfsfafss as aaafsassffssfs ad.</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="6u 12u$(medium)">
+						<h3>Quicker than button bashing</h3>
+						<p>Adssssas aaassa adsffd afssadfdfad afad assf afsfss aaas aadf asfss aafsf ass as asasdaddfasfdsfdff asa adss assadsad aas as aasas afsdf asfsssssdsfssf afasssasdss aafssaddaadsd asddsasaass afsddsfss adddsdsasd adsaad ada afsssa afdsssffsaa affdsafasfffdsss aadafds asas asdsda aaaasffsdssffadsasssdaaasfddsfdasd aaaa af asffsfd afafas aa aa.</p>
+					</div>
+
+					<div class="6u 12u$(medium)">
+						<h3>Great as placeholder text</h3>
+						<p>Asfssfsfaddff as assfafasf asdss aassssfssdf asafsa aadadssf asafsa aaass af aaaaasfadfaafsdsfafdsadfdd aasfds aaasssss assssssdas aad asasaasssa aada adddfasfd asdffsfdsdassadss aadsfsfssdf aafsfd af aas af aaadsssdadss adssdsasdfsddfs assas asasfsad asdsda addssffsa afsfds asf add adsds asaafasddada af assfs ad asaf aaafffs afd aasasasfs.</p>
+					</div>
+				</div>
+
 				<!-- <ul>
 					<li>Faucibus orci lobortis ac adipiscing integer.</li>
 					<li>Col accumsan arcu mi aliquet placerat.</li>
@@ -65,30 +82,61 @@
 		<section id="five" class="wrapper style2 special fade">
 			<div class="container">
 				<header>
-					<h2>Magna faucibus lorem diam</h2>
-					<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
+					<h2>Need some sdf in your life?</h2>
+					<p style="margin-bottom:2em;">Simply choose the size and click the button below</p>
 				</header>
-				<form method="post" action="#" class="container 50%">
+				<form id="generate-sdf" method="post" action="/generate/small" class="container 50%">
 					<div class="row uniform 50%">
-						<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address"></div>
-						<div class="4u$ 12u$(xsmall)"><input type="submit" value="Get Started" class="fit special"></div>
+						<select id="size" style="float:none;margin:0 auto;position:relative;left:10px;width:290px;padding:0 0 0 10px;" class="5u$">
+							<option value="small">Small</option>
+							<option value="medium">Medium</option>
+							<option value="large">Large</option>
+						</select>
+						<div class="6u$" style="float:none;margin:0 auto;"><input type="submit" id="generate-submit" value="Generate me some sdf!" class="fit special"></div>
 					</div>
 				</form>
 			</div>
-		</section>
-		<ul class="icons" style="margin-top:5em;">
-			<li><a href="https://twitter.com/arrancscott" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-			<!-- <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li> -->
-			<li><a href="http://instagram.com/arrancscott/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-			<li><a href="https://github.com/arrancscott" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-			<li><a href="mailto:arranscott@me.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-			<li><a href="http://arran.it" class="icon alt fa-link"><span class="label">Website</span></a></li>
-		</ul>
-		<ul class="copyright">
-			<li>Made with a keyboard by Arran</li>
-			<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-		</ul>
-	</footer>
 
-</body>
-</html>
+			<div class="wrapper style1" style="padding:0;">
+				<div class="container">
+					<section id="sdf-content">
+					</section>
+				</div>
+			</div>
+		</section>
+
+			<ul class="icons" style="margin-top:5em;">
+				<li><a href="https://twitter.com/arrancscott" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+				<!-- <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li> -->
+				<li><a href="http://instagram.com/arrancscott/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://github.com/arrancscott" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+				<li><a href="mailto:arranscott@me.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+				<li><a href="http://arran.it" class="icon alt fa-link"><span class="label">Website</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>Made with a keyboard by Arran</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+
+		<script>
+		$(function() {
+			$('#size').change(function() {
+				$('#generate-sdf').attr('action', '/generate/' + $(this).val());
+			});
+
+			$('#generate-submit').click(function(e) {
+				e.preventDefault();
+				$.ajax({
+					type: "POST",
+					url: $('#generate-sdf').attr('action'),
+					success: function (data) {
+						$('#sdf-content').html(data['sdf']);
+					}
+				});
+			});
+		});
+		</script>
+
+	</body>
+	</html>
