@@ -1680,3 +1680,35 @@
 	#footer .copyright li a {
 		color: inherit;
 	}
+
+	.global.xlarge.large.medium {
+		padding: 0 2em;
+	}
+
+	/* Media queries */
+
+	@media (max-width: 900px) {
+		header.major {
+			padding: 10em 2em;
+		}
+	}
+
+	@media (max-width: 480px) {
+		h2 {
+			font-size: 1.5em;
+		}
+
+		header h2 + p {
+			font-size: 1em;
+		}
+
+		input, select {
+			font-size: 90%!important;
+		}
+	}
+
+	@media (min-width: 1000px) {
+		#generate-me-some {
+			width: auto!important;
+		}
+	}
