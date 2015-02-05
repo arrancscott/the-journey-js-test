@@ -1681,9 +1681,9 @@
 		color: inherit;
 	}
 
-	.global.xlarge.large.medium {
+/*	.global.xlarge.large.medium {
 		padding: 0 2em;
-	}
+	}*/
 
 	/* Media queries */
 
@@ -1704,6 +1704,16 @@
 
 		input, select {
 			font-size: 90%!important;
+		}
+	}
+
+	@media (max-width: 321px) {
+		#size {
+			width: 260px!important;
+		}
+
+		#generate-submit {
+			margin-right: 20px;
 		}
 	}
 

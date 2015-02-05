@@ -26,4 +26,6 @@ class SdfGenerator < Sinatra::Base
 		sdf = sdf.gsub(/(?<=[a-z])(?=[A-Z])/, ' ').downcase.capitalize + '.'
 		json sdf: sdf
 	end
+
+	run! if __FILE__ == $0
 end
