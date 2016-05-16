@@ -1,6 +1,6 @@
 require "rubygems"
 require "sinatra"
 
-require File.expand_path '../sdf-generator.rb', __FILE__
+require File.expand_path '../js-test.rb', __FILE__
 
-run SdfGenerator
+run JsTest

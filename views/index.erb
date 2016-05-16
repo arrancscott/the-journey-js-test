@@ -1,155 +1,131 @@
-<!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!doctype html>
+
+<html lang="en">
 <head>
-	<title>Sdf Generator</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<link rel="shortcut icon" type="image/png" href="favicon.png?v=3" />
-	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.scrolly.min.js"></script>
-	<script src="js/jquery.dropotron.min.js"></script>
-	<script src="js/jquery.scrollex.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-layers.min.js"></script>
-	<script src="js/init.js"></script>
-	<noscript>
-		<link rel="stylesheet" href="css/skel.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/style-xlarge.css" />
-	</noscript>
-	<script>
-  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <meta charset="utf-8">
+  <title>JS Test</title>
+  <meta name="description" content="JS Test">
+  <link rel="stylesheet" href="css/style.css?v=1.0">
+  <link rel="stylesheet" href="css/animate.css">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+  <script src="js/jquery.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet'/>
+  <script src="//d3js.org/d3.v3.min.js"></script>
+  <style>
 
-  		ga('create', 'UA-59463877-1', 'auto');
-  		ga('send', 'pageview');
-
-	</script>
-	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+  </style>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
+
 <body>
+<div class="container">
+  <div class="header">
+    <h1>The Journey</h1>
+    <ul class="menu">
+      <li>
+        <a href="#map" class="link">Map</a>
+        <span>|</span>
+      </li>
+      <li>
+        <a href="#graph-speed" class="link">Graph (Speed)</a>
+        <span>|</span>
+      </li>
+      <li>
+        <a href="#graph-altitude" class="link">Graph (Altitude)</a>
+      </li>
+      <div class="clearfix"></div>
+    </ul>
+  </div>
+  <div class="info">
+    <div class="label">
+      <ul class="list">
+        <li>Distance Travelled</li>
+        <li>Fastest Speed</li>
+        <li>Average Speed</li>
+        <li>Highest Point</li>
+        <li>Average Altitude</li>
+        <li>Central Lat/Lon</li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="value">
+      <ul class="list">
+        <li><%= @info_hash[:distance_travelled] %> <span>miles</span></li>
+        <li><%= @info_hash[:fastest_speed].to_i %> <span>mph</span></li>
+        <li><%= @info_hash[:average_speed].round %> <span>mph</span></li>
+        <li><%= @info_hash[:highest_point].round %></li>
+        <li><%= @info_hash[:average_altitude].round %></li>
+        <li><%= @info_hash[:central_lat_lon] %></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div id="map">
+    <%= erb :map, layout: false %>
+  </div>
+  <div class="graph graph-speed">
+    <h2>
+      <hr>
+      <span>Speed</span>
+      <hr>
+    </h2>
+  </div>
+  <div class="graph graph-altitude">
+    <h2>
+      <hr>
+      <span>Altitude</span>
+      <hr>
+    </h2>
+  </div>
+  <footer>
+    <p>
+      Made with love and a keyboard by <a href="http://arran.it">Arran</a>
+    </p>
+  </footer>
+</div>
 
-	<header class="major" id="major-man">
-		<h2>Sdf Generator</h2>
-		<p>Tired of using lorem ipsum? Make way for sdfasdf...</p>
-	</header>
+<script src="js/graph.js"></script>
 
-	<!-- Main -->
-	<div id="main" class="wrapper style1" style="padding-top:4em;">
-		<div class="container">
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('a[href*="#"]:not([href="#"])').click(function () {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          if (target.attr('id') != 'map') {
+            $('html, body').animate({
+              scrollTop: target.offset().top - 90
+            }, 1000);
+          } else {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+          }
+          return false;
+        }
+      }
+    });
 
-			<!-- Content -->
-			<section id="content">
-				<!-- <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a> -->
+    $('a').each(function () {
+      animationHover(this, 'tada');
+    });
+  });
 
-				<div class="row">
-					<div class="6u 12u$(medium)">
-						<h3>Pronounced 'sdf'</h3>
-						<p>Fs aasaass asfsa afs adsa asss aaf adssfssdd aassfssfaf ad aa adsad adaas aafsfdfafsadssssasss aasadafd asf asddsd afasfssasfsssda aafdsfafssasdfdffs aaddds asffaf assdsffs af aaddafass adssasd afss ass aaas aaddaa aaafssfad adfddssasss aasssa afdssadsdfasdad asdasdfa assf afaasdsfssdas aadf aasdf adadds ass as affsdaaffssa aaafsfssfssfssdd.</p>
-					</div>
+  function animationHover(element, animation) {
+    element = $(element);
+    element.mouseenter(function () {
+      element.addClass('animated ' + animation);
+    });
+    element.mouseleave(function () {
+      element.removeClass('animated ' + animation);
+    })
+  }
+</script>
 
-					<div class="6u 12u$(medium)">
-						<h3>It literally means no sense</h3>
-						<p>D affddasdssdssfassadd afs aadsff af afdsdddssaf ads adda aaadsfass assadaaaf afa assfs as asfasassfdddffdsass afssadaaffaaadsddafssff assfssd ad aafffddsss adsf assss aasaafsad as aafdd asdfdssfasf aassdsadssad as afssffs asa afdaaaafassss aaad ad aasdsdsf adsssafdss aa asasasasdd aaffs assssf aaadsss asas adaasfsfafss as aaafsassffssfs ad.</p>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="6u 12u$(medium)">
-						<h3>Quicker than button bashing</h3>
-						<p>Adssssas aaassa adsffd afssadfdfad afad assf afsfss aaas aadf asfss aafsf ass as asasdaddfasfdsfdff asa adss assadsad aas as aasas afsdf asfsssssdsfssf afasssasdss aafssaddaadsd asddsasaass afsddsfss adddsdsasd adsaad ada afsssa afdsssffsaa affdsafasfffdsss aadafds asas asdsda aaaasffsdssffadsasssdaaasfddsfdasd aaaa af asffsfd afafas aa aa.</p>
-					</div>
-
-					<div class="6u 12u$(medium)">
-						<h3>Great as placeholder text</h3>
-						<p>Asfssfsfaddff as assfafasf asdss aassssfssdf asafsa aadadssf asafsa aaass af aaaaasfadfaafsdsfafdsadfdd aasfds aaasssss assssssdas aad asasaasssa aada adddfasfd asdffsfdsdassadss aadsfsfssdf aafsfd af aas af aaadsssdadss adssdsasdfsddfs assas asasfsad asdsda addssffsa afsfds asf add adsds asaafasddada af assfs ad asaf aaafffs afd aasasasfs.</p>
-					</div>
-				</div>
-
-				<!-- <ul>
-					<li>Faucibus orci lobortis ac adipiscing integer.</li>
-					<li>Col accumsan arcu mi aliquet placerat.</li>
-					<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-					<li>Blandit massa non blandit tempor interdum.</li>
-					<li>Lacinia mattis arcu nascetur lobortis.</li>
-				</ul> -->
-			</section>
-
-		</div>
-	</div>
-
-	<!-- Footer -->
-	<footer id="footer" style="padding: 0 0 6em 0;">
-		<section id="five" class="wrapper style2 special fade">
-			<div class="container">
-				<header>
-					<h2>Need some sdf in your life?</h2>
-					<p style="margin-bottom:2em;">Simply choose the size and click the button below</p>
-				</header>
-				<form id="generate-sdf" method="post" action="/generate/small" class="container 50%">
-					<div class="row uniform 50%">
-						<select id="size" style="float:none;margin:0 auto;position:relative;left:10px;width:290px;padding:0 0 0 10px;" class="5u$">
-							<option value="small">Small</option>
-							<option value="medium">Medium</option>
-							<option value="large">Large</option>
-						</select>
-						<div class="6u$" id="generate-me-some" style="float:none;margin:0 auto;position:relative;width:280px">
-							<input type="submit" id="generate-submit" value="Generate me some sdf!" class="special" style="margin-bottom:10px">
-						</div>
-					</div>
-				</form>
-			</div>
-
-			<div class="wrapper style1" style="padding:0;">
-				<div class="container">
-					<section id="sdf-content">
-					</section>
-				</div>
-			</div>
-		</section>
-
-			<ul class="icons" style="margin-top:5em;">
-				<li><a href="https://twitter.com/arrancscott" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-				<!-- <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li> -->
-				<li><a href="http://instagram.com/arrancscott/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="https://github.com/arrancscott" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-				<li><a href="mailto:arranscott@me.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-				<li><a href="http://arran.it" target="_blank" class="icon alt fa-link"><span class="label">Website</span></a></li>
-			</ul>
-			<ul class="copyright">
-				<li>Made with a keyboard by Arran</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</footer>
-
-		<script>
-		$(function() {
-			$('#size').change(function() {
-				$('#generate-sdf').attr('action', '/generate/' + $(this).val());
-			});
-
-			$('#generate-submit').click(function(e) {
-				e.preventDefault();
-				$.ajax({
-					type: "POST",
-					url: $('#generate-sdf').attr('action'),
-					success: function (data) {
-						$('#sdf-content').html(data['sdf']);
-					}
-				});
-			});
-		});
-		</script>
-
-	</body>
-	</html>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<script type="text/javascript" charset="utf-8">
+  L.mapbox.accessToken = 'pk.eyJ1IjoiYXJyYW5zY290dCIsImEiOiJjaW8wOXoycGIwMHU4dmZtMnJtbnZsYnNqIn0.IKqEB-hw6Fkt8WEHaRRgVA';
+  var map = L.mapbox.map('map', 'mapbox.streets');
+  map.scrollWheelZoom.disable();
+  var line_points = <%= @points %>;
+  var polyline_options = {
+    color: '#000'
+  };
+  var polyline = L.polyline(line_points, polyline_options).addTo(map);
+  map.fitBounds(polyline.getBounds())
+</script>

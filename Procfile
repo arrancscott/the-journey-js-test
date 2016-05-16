@@ -1,1 +1,1 @@
-web: bundle exec ruby sdf-generator.rb -p $PORT
+web: bundle exec ruby js-test.rb -p $PORT
