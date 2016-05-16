@@ -1,6 +1,6 @@
 # The Journey (JS test)
 
-This is an example project using Sinatra which demonstrates my HTML, CSS, JS & Ruby skills.
+This is an example project using Sinatra that demonstrates my HTML, CSS, JS & Ruby skills.
 
 It's aim is to provide a user with information regarding a journey undertaken from point A to point B.
 
