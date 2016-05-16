@@ -8,5 +8,5 @@ To run the project, simply:
 
 1. Clone the repo
 2. 'cd' into the directory
-3. Run the js-test.rb file (```$ ruby js.test.rb```)
+3. Run the js-test.rb file (```$ ruby js-test.rb```)
 4. Point your browser to http://localhost:4567
